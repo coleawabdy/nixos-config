@@ -12,7 +12,6 @@ builtins.listToAttrs
             system = hostInfo.system;
             modules = [
               ../configuration.nix
-              inputs.hyprland.nixosModules.default
               hostInfo.host
               { networking.hostName = "${hostname}"; }
             ];
