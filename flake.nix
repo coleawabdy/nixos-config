@@ -7,7 +7,7 @@
   outputs = { self, nixpkgs, ... } @ inputs: let
    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
   in {
-    nixosConfigurations = mkNixOSConfigs [ "hydrogen" ] {
+    nixosConfigurations = mkNixOSConfigs [ "hydrogen" "helium" ] {
       inherit nixpkgs inputs;
     };
   };
