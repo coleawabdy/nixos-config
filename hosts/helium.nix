@@ -13,7 +13,10 @@
     ];
     boot.initrd.kernelModules = [ "dm-snapshot" ];
     boot.kernelModules = [ "kvm-intel" ];
-    boot.initrd.luks.devices.nixos = "/dev/disk/by-label/NIXOS";
+    boot.initrd.luks.devices.nixos = {
+      device = "/dev/disk/by-label/NIXOS";
+      preLVM = true;
+    };
 
     fileSystems = {
       "/" = {
@@ -30,7 +33,6 @@
     swapDevices = [
       {
         device = "/dev/main/swap";
-        preLVM = true;
       }
     ];
 
