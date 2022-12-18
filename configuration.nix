@@ -16,14 +16,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_hardened;
 
-  users.users.cole = {
-    isNormalUser = true;
-    home = "/home/cole";
-    extraGroups = [ "wheel" ];
-  };
-
-  
-
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
