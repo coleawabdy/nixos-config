@@ -1,9 +1,7 @@
 { config, pkgs, flake, ... }:
 
 {
-  imports = [
-      
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.grub = {
     enable = true;
@@ -15,6 +13,8 @@
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_hardened;
+  
+  
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
