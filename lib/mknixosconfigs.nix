@@ -1,4 +1,4 @@
-hostnames: { nixpkgs, inputs }:
+{ nixpkgs, inputs }:
 
 builtins.listToAttrs
   ( map (hostname:
@@ -31,6 +31,6 @@ builtins.listToAttrs
               }
             ];
           };
-    }) 
-    hostnames )
+    }) ( nixpkgs.lib.lists.unique ( nixpkgs.lib.lists.flatten ( map (person: person.hosts ) (import ../people.nix) ) ) )
+  )
 

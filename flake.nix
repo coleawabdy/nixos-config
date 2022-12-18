@@ -16,7 +16,7 @@
    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
    mkHomeConfigs = import ./lib/mkhomeconfigs.nix;
   in {
-    nixosConfigurations = mkNixOSConfigs [ "hydrogen" "helium" ] {
+    nixosConfigurations = mkNixOSConfigs {
       inherit nixpkgs inputs; 
     };
 
