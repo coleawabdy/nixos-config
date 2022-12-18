@@ -1,0 +1,6 @@
+[
+  {
+    name = "cole";
+    groups = [ "wheel" ];
+  }
+]

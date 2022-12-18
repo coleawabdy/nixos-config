@@ -1,0 +1,4 @@
+users: { inputs }:
+
+builtins.listToAttrs
+  []  

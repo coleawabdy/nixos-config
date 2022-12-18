@@ -1,13 +1,26 @@
 {
   description = "System configuration";
+
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs/nixos-22.11;
- };
 
-  outputs = { self, nixpkgs, ... } @ inputs: let
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, ... } @ inputs: 
+  
+  let
    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
+   mkHomeConfigs = import ./lib/mkhomeconfigs.nix;
   in {
     nixosConfigurations = mkNixOSConfigs [ "hydrogen" "helium" ] {
+      inherit nixpkgs inputs; 
+    };
+
+    homeConfigurations = mkHomeConfigs {
       inherit nixpkgs inputs;
     };
   };

@@ -13,7 +13,25 @@ builtins.listToAttrs
             modules = [
               ../configuration.nix
               hostInfo.host
-              { networking.hostName = "${hostname}"; }
+              {
+                users.users = builtins.listToAttrs ( 
+                  map (person:
+                    {
+                      name = "${person.name}";
+                      value = {
+                        isNormalUser = true;
+                        extraGroups = person.groups;
+                      };
+                    }
+                  ) 
+                  ( builtins.filter (person: 
+                      builtins.any (host: host == "${hostname}") 
+                    ) (import ../people.nix).hosts
+                  )
+                );
+
+                networking.hostName = "${hostname}"; 
+              }
             ];
           };
     }) 
