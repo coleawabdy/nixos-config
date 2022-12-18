@@ -1,4 +1,4 @@
-users: { inputs }:
+{ nixpkgs, inputs, people }:
 
 builtins.listToAttrs
   []  

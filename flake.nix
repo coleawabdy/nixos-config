@@ -15,13 +15,15 @@
   let
    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
    mkHomeConfigs = import ./lib/mkhomeconfigs.nix;
+
+   people = import ./people.nix;
   in {
     nixosConfigurations = mkNixOSConfigs {
-      inherit nixpkgs inputs; 
+      inherit nixpkgs inputs people; 
     };
 
     homeConfigurations = mkHomeConfigs {
-      inherit nixpkgs inputs;
+      inherit nixpkgs inputs people;
     };
   };
 }

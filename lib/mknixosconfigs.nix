@@ -1,4 +1,4 @@
-{ nixpkgs, inputs }:
+{ nixpkgs, inputs, people }:
 
 builtins.listToAttrs
   ( map (hostname:
@@ -7,7 +7,6 @@ builtins.listToAttrs
       value = 
         let 
           hostInfo = import ../hosts/${hostname}.nix;
-          people = import ../people.nix;
         in
           nixpkgs.lib.nixosSystem {
             system = hostInfo.system;
@@ -31,6 +30,6 @@ builtins.listToAttrs
               }
             ];
           };
-    }) ( nixpkgs.lib.lists.unique ( nixpkgs.lib.lists.flatten ( map (person: person.hosts ) (import ../people.nix) ) ) )
+    }) ( nixpkgs.lib.lists.unique ( nixpkgs.lib.lists.flatten ( map (person: person.hosts ) people ) ) )
   )
 
