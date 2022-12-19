@@ -10,9 +10,10 @@ builtins.listToAttrs
         in
           nixpkgs.lib.nixosSystem {
             system = hostInfo.system;
+            
             modules = [
-              inputs.home-manager.nixosModules.home-manager
               ../configuration.nix
+              inputs.home-manager.nixosModules.home-manager
               hostInfo.host
               {
                 users.users = builtins.listToAttrs (
@@ -28,13 +29,13 @@ builtins.listToAttrs
                 );
 
                 networking.hostName = "${hostname}"; 
-
+                
                 home-manager = {
                   useGlobalPkgs = true;
                   useUserPackages = true;
                   users.cole = import ../users/cole/home.nix;
                 };
-              }
+             }
             ];
           };
     }) ( nixpkgs.lib.lists.unique ( nixpkgs.lib.lists.flatten ( map (person: person.hosts ) people ) ) )
