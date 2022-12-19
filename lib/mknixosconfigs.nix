@@ -1,6 +1,7 @@
-{ nixpkgs, inputs, people }:
-
-builtins.listToAttrs
+{ nixpkgs, inputs }:
+let
+  people = import ../people.nix;
+in builtins.listToAttrs
   ( map (hostname:
     { 
       name = "${hostname}"; 
@@ -13,7 +14,6 @@ builtins.listToAttrs
             
             modules = [
               ../configuration.nix
-              inputs.home-manager.nixosModules.home-manager
               hostInfo.host
               {
                 users.users = builtins.listToAttrs (
@@ -30,12 +30,7 @@ builtins.listToAttrs
 
                 networking.hostName = "${hostname}"; 
                 
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  users.cole = import ../users/cole/home.nix;
-                };
-             }
+              }
             ];
           };
     }) ( nixpkgs.lib.lists.unique ( nixpkgs.lib.lists.flatten ( map (person: person.hosts ) people ) ) )

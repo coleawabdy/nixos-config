@@ -41,6 +41,8 @@
     powerManagement.cpuFreqGovernor = "powersave";
     hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
 
+    security.polkit.enable = true;
 
+    hardware.opengl.enable = true;
   };
 }

@@ -17,11 +17,26 @@
   with inputs;
   let
    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
-   people = import ./people.nix;
   in {
     nixosConfigurations = mkNixOSConfigs {
-      inherit nixpkgs inputs people; 
+      inherit nixpkgs inputs; 
     };
+    
+    homeConfigurations.cole = 
+    with inputs;
+    let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
 
+        config.allowUnfree = true;
+      };
+    in home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+
+      modules = [
+        hyprland.homeManagerModules.default
+        ./users/cole/home.nix
+      ];
+    };
  };
 }
