@@ -11,6 +11,7 @@ builtins.listToAttrs
           nixpkgs.lib.nixosSystem {
             system = hostInfo.system;
             modules = [
+              inputs.home-manager.nixosModules.home-manager
               ../configuration.nix
               hostInfo.host
               {
@@ -27,6 +28,12 @@ builtins.listToAttrs
                 );
 
                 networking.hostName = "${hostname}"; 
+
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.cole = import ../users/cole/home.nix;
+                };
               }
             ];
           };
