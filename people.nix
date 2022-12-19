@@ -1,7 +1,7 @@
 [
   {
     name = "cole";
-    groups = [ "wheel" ];
+    groups = [ "wheel" "audio" ];
     hosts = [
       "hydrogen"
       "helium"

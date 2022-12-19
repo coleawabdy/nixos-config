@@ -26,6 +26,9 @@ in {
       firefox
       alacritty
       source-code-pro
+      vscode
+      alsa-utils
+      pciutils
     ];
 
     sessionVariables = {
@@ -42,4 +45,11 @@ in {
     "alacritty.yml".source = ../../config/alacritty.yml;
     "hypr/hyprland.conf".source = ../../config/hyprland.conf;
   };
+
+  programs.firefox = {
+    enable = true;
+
+  };
+
+
 }

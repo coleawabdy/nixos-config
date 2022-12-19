@@ -1,6 +1,6 @@
 {
   system = "x86_64-linux";
-  host = { config, lib, ... }:
+  host = { config, lib, pkgs, ... }:
   {
     boot.initrd.availableKernelModules = [
       "xhci_pci"
@@ -40,9 +40,25 @@
 
     powerManagement.cpuFreqGovernor = "powersave";
     hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
+    
+    security = {
+      polkit.enable = true;
+      rtkit.enable = true;
+    };
 
-    security.polkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+      wireplumber.enable = true;
+    };
 
     hardware.opengl.enable = true;
+    hardware.pulseaudio.enable = false;
+    hardware.firmware = with pkgs; [
+      sof-firmware
+    ];
   };
 }
