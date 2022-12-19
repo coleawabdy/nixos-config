@@ -22,7 +22,10 @@ in {
       vim
       htop
       tmux
+      wofi
+      firefox
       alacritty
+      source-code-pro
     ];
 
     sessionVariables = {
