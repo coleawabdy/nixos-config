@@ -19,6 +19,7 @@
   with inputs;
   let
    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
+   mkHomeConfigs = import ./lib/mkhomeconfigs.nix;
   in {
     nixosConfigurations = mkNixOSConfigs [
       "hydrogen"
@@ -27,23 +28,10 @@
       inherit inputs; 
     };
     
-    homeConfigurations.cole = 
-    with inputs;
-    let
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        overlays = [ nurpkgs.overlay ];
-        config.allowUnfree = true;
-      };
-    in home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-
-      
-
-      modules = [
-        hyprland.homeManagerModules.default
-        ./users/cole/home.nix
-      ];
+    homeConfigurations = mkHomeConfigs [
+      "cole"
+    ] {
+      inherit inputs;
     };
  };
 }
