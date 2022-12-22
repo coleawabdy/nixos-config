@@ -25,7 +25,6 @@ inputs:
           vim
           htop
           tmux
-          wofi
           alacritty
           source-code-pro
           alsa-utils
