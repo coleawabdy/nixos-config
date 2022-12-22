@@ -10,7 +10,7 @@ configuration {
 }
 
 * {
-    font:           "Source Code Pro 10";
+    font:           "JetBrains Mono Nerd Font 10";
     background:     #2E3440FF;
     background-alt: #383E4AFF;
     foreground:     #E5E9F0FF;

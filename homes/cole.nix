@@ -21,7 +21,6 @@ inputs:
         stateVersion = "22.11";
 
         packages = with pkgs; [
-          git
           vim
           htop
           tmux
@@ -50,6 +49,7 @@ inputs:
   in [
     inputs.hyprland.homeManagerModules.default
     (import ./modules/firefox.nix)
+    (import ./modules/git.nix)
     (import ./modules/desktop/desktop.nix)
     config
   ]
