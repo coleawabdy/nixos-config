@@ -28,6 +28,8 @@ inputs:
           source-code-pro
           alsa-utils
           pciutils
+          cargo
+          rustc
         ];
 
         sessionVariables = {
