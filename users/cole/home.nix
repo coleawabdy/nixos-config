@@ -23,10 +23,8 @@ in {
       htop
       tmux
       wofi
-      firefox
       alacritty
       source-code-pro
-      vscode
       alsa-utils
       pciutils
     ];
@@ -44,6 +42,10 @@ in {
   xdg.configFile = {
     "alacritty.yml".source = ../../config/alacritty.yml;
     "hypr/hyprland.conf".source = ../../config/hyprland.conf;
+  };
+
+  programs.vscode = {
+    enable = true;
   };
 
   programs.firefox = {

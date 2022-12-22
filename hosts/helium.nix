@@ -1,7 +1,5 @@
-{
-  system = "x86_64-linux";
-  host = { config, lib, pkgs, ... }:
-  {
+let
+  config = { config, lib, pkgs, ... }: {
     boot.initrd.availableKernelModules = [
       "xhci_pci"
       "thunderbolt"
@@ -41,6 +39,10 @@
     powerManagement.cpuFreqGovernor = "powersave";
     hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
     
+    boot.kernel.sysctl = {
+      "kernel.unprivileged_userns_clone" = 1;
+    };
+
     security = {
       polkit.enable = true;
       rtkit.enable = true;
@@ -54,11 +56,16 @@
       jack.enable = true;
       wireplumber.enable = true;
     };
-
+    
     hardware.opengl.enable = true;
     hardware.pulseaudio.enable = false;
     hardware.firmware = with pkgs; [
       sof-firmware
     ];
   };
+in {
+  system = "x86_64-linux";
+  modules = [
+    config
+  ];
 }

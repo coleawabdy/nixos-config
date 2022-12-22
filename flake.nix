@@ -20,8 +20,11 @@
   let
    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
   in {
-    nixosConfigurations = mkNixOSConfigs {
-      inherit nixpkgs inputs; 
+    nixosConfigurations = mkNixOSConfigs [
+      "hydrogen"
+      "helium"
+    ] {
+      inherit inputs; 
     };
     
     homeConfigurations.cole = 
