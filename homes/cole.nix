@@ -51,6 +51,6 @@ inputs:
   in [
     inputs.hyprland.homeManagerModules.default
     (import ./modules/firefox.nix)
-    (import ./modules/hyprland/hyprland.nix)
+    (import ./modules/desktop/desktop.nix)
     config
   ]
