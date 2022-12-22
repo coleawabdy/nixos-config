@@ -13,7 +13,11 @@
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_hardened;
-  
+
+  users.users.cole = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+  };  
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
