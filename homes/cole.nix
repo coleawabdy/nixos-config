@@ -28,8 +28,9 @@ inputs:
           source-code-pro
           alsa-utils
           pciutils
-          cargo
-          rustc
+          (rust-bin.stable.latest.default.override {
+            extensions = [ "rust-src" ];
+          })
         ];
 
         sessionVariables = {

@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs/nixos-22.11;
-    
     nurpkgs.url = github:nix-community/NUR;
+    rust-overlay.url = github:oxalica/rust-overlay;
 
     home-manager = {
       url = "github:nix-community/home-manager";
