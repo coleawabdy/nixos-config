@@ -38,13 +38,10 @@ inputs:
         };
       };
       
-      wayland.windowManager.hyprland.enable = true;
-
       news.display = "silent";
 
       xdg.configFile = {
         "alacritty.yml".source = ../config/alacritty.yml;
-        "hypr/hyprland.conf".source = ../config/hyprland.conf;
       };
 
       programs.vscode = {
@@ -54,5 +51,6 @@ inputs:
   in [
     inputs.hyprland.homeManagerModules.default
     (import ./modules/firefox.nix)
+    (import ./modules/hyprland/hyprland.nix)
     config
   ]
