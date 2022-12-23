@@ -7,6 +7,8 @@
     rofi-wayland
   ];
 
+  fonts.fontconfig.enable = true;
+
   wayland.windowManager.hyprland.enable = true;
 
   xdg.configFile = {

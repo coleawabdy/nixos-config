@@ -25,7 +25,6 @@ inputs:
           htop
           tmux
           alacritty
-          source-code-pro
           alsa-utils
           pciutils
           (rust-bin.stable.latest.default.override {
