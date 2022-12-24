@@ -6,8 +6,7 @@
     noto-fonts-emoji
     swaybg
     rofi-wayland
-    gcc
-    lldb
+    megasync
   ];
 
   fonts.fontconfig.enable = true;
