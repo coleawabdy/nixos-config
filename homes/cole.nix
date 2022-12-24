@@ -30,7 +30,7 @@ inputs:
           (rust-bin.stable.latest.default.override {
             extensions = [ "rust-src" ];
           })
-        ];
+       ];
 
         sessionVariables = {
           EDITOR = "vim";
@@ -46,6 +46,12 @@ inputs:
 
       programs.vscode = {
         enable = true;
+        extensions = with pkgs; [
+          vscode-extensions.vadimcn.vscode-lldb
+          vscode-extensions.matklad.rust-analyzer
+          vscode-extensions.arcticicestudio.nord-visual-studio-code
+          vscode-extensions.tamasfe.even-better-toml
+        ];
       };
     };
   in [

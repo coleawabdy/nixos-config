@@ -3,8 +3,11 @@
 {
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    noto-fonts-emoji
     swaybg
     rofi-wayland
+    gcc
+    lldb
   ];
 
   fonts.fontconfig.enable = true;
