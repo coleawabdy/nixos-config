@@ -12,10 +12,15 @@
   fonts.fontconfig.enable = true;
 
   wayland.windowManager.hyprland.enable = true;
+  
+  programs = {
+    waybar.enable = true;
+  };
 
   xdg.configFile = {
     "hypr/hyprland.conf".source = ./hyprland.conf;
     "rofi/config.rasi".source = ./rofi.rasi;
+    "waybar/config".source = ./waybar.json;
     "wallpaper.png".source = ./wallpaper.png;
   };
 }
