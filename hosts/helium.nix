@@ -74,6 +74,7 @@ let
 in {
   system = "x86_64-linux";
   modules = [
+    (import ./modules/security.nix)
     (import ./modules/bluetooth.nix)
     config
   ];
