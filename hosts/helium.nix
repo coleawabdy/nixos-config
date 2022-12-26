@@ -66,6 +66,10 @@ let
     hardware.firmware = with pkgs; [
       sof-firmware
     ];
+
+    environment.systemPackages = with pkgs; [
+      tzupdate
+    ];
   };
 in {
   system = "x86_64-linux";
