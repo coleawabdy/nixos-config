@@ -26,10 +26,11 @@ inputs:
           tmux
           alacritty
           alsa-utils
-          pciutils
           (rust-bin.stable.latest.default.override {
             extensions = [ "rust-src" ];
           })
+          gcc
+          cmake
        ];
 
         sessionVariables = {
