@@ -16,7 +16,11 @@
 
   users.users.cole = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "input"
+      "audio"
+    ];
   };
 
   environment.systemPackages = with pkgs; [
