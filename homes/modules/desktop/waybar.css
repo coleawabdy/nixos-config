@@ -107,14 +107,6 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
 
 #disk {
     background-color: #964B00;
@@ -124,12 +116,8 @@ label:focus {
     background-color: #90b1b1;
 }
 
-#network {
-    background-color: #2980b9;
-}
-
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: #bf616a;
 }
 
 #pulseaudio {
@@ -183,12 +171,11 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+  padding-right: 18px;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: #4c566a;
 }
 
 #mpd {
