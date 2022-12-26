@@ -24,7 +24,6 @@ inputs:
           vim
           htop
           tmux
-          alacritty
           alsa-utils
           (rust-bin.stable.latest.default.override {
             extensions = [ "rust-src" ];
@@ -41,10 +40,6 @@ inputs:
       
       news.display = "silent";
 
-      xdg.configFile = {
-        "alacritty.yml".source = ../config/alacritty.yml;
-      };
-
       programs.vscode = {
         enable = true;
         extensions = with pkgs; [
@@ -59,6 +54,7 @@ inputs:
     inputs.hyprland.homeManagerModules.default
     (import ./modules/firefox.nix)
     (import ./modules/git.nix)
+    (import ./modules/alacritty.nix)
     (import ./modules/desktop/desktop.nix)
     config
   ]
