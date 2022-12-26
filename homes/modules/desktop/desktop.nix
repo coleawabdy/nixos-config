@@ -6,7 +6,6 @@
     noto-fonts-emoji
     swaybg
     rofi-wayland
-    megasync
   ];
 
   fonts.fontconfig.enable = true;
