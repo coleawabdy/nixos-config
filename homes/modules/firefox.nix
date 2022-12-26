@@ -7,6 +7,7 @@
       bitwarden
       ublock-origin
       localcdn
+      kristofferhagen-nord-theme
     ];
     profiles.default = {
       id = 0;
@@ -32,6 +33,7 @@
         "datareporting.policy.dataSubmissionEnabled" = false;
         "datareporting.healthreport.uploadEnabled" = false;
         "dom.security.https_only_mode" = true;
+        "extensions.activeThemeID" = "{e410fec2-1cbd-4098-9944-e21e708418af}";
         "extensions.formautofill.addresses.enabled" = false;
         "extensions.formautofill.creditCards.enabled" = false;
         "extensions.formautofill.heuristics.enabled" = false;
