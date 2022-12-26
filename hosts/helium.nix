@@ -34,8 +34,9 @@ let
         device = "/dev/main/swap";
       }
     ];
-
-    networking.useDHCP = true;
+    
+    networking.wireless.enable = false;
+    networking.networkmanager.enable = true;
 
     powerManagement.cpuFreqGovernor = "powersave";
     hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;

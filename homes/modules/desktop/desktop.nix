@@ -9,6 +9,7 @@
     noto-fonts-emoji
     swaybg
     rofi-wayland
+    networkmanagerapplet
   ];
 
   fonts.fontconfig.enable = true;
