@@ -2,7 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ 
+      "JetBrainsMono"
+      "Noto"
+    ]; })
     noto-fonts-emoji
     swaybg
     rofi-wayland
