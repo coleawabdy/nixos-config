@@ -28,6 +28,7 @@
         "browser.safebrowsing.downloads.remote.enabled" = false;
         "browser.search.suggest.enabled" = false;
         "browser.startup.homepage" = "about:blank";
+        "browser.startup.page" = 0;
         "datareporting.policy.dataSubmissionEnabled" = false;
         "datareporting.healthreport.uploadEnabled" = false;
         "dom.security.https_only_mode" = true;
