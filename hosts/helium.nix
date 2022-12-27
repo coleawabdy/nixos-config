@@ -77,6 +77,7 @@ in {
   modules = [
     (import ./modules/security.nix)
     (import ./modules/bluetooth.nix)
+    (import ./modules/steam.nix)
     config
   ];
 }

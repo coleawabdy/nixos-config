@@ -30,6 +30,8 @@ inputs:
           })
           gcc
           cmake
+          steam-tui
+          steamcmd
        ];
 
         sessionVariables = {
@@ -49,7 +51,8 @@ inputs:
           vscode-extensions.tamasfe.even-better-toml
         ];
       };
-    };
+
+   };
   in [
     inputs.hyprland.homeManagerModules.default
     (import ./modules/firefox.nix)
