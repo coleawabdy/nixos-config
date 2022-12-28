@@ -10,6 +10,7 @@
     swaybg
     rofi-wayland
     networkmanagerapplet
+    libnotify
   ];
 
   fonts.fontconfig.enable = true;
@@ -18,6 +19,13 @@
   
   programs = {
     waybar.enable = true;
+  };
+
+  services = {
+    dunst = {
+      enable = true;
+      configFile = ./dunstrc;
+    };
   };
 
   xdg.configFile = {
