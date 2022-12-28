@@ -7,12 +7,16 @@
       "Noto"
     ]; })
     noto-fonts-emoji
+    liberation_ttf
     swaybg
     rofi-wayland
     networkmanagerapplet
     libnotify
-    xdg-desktop-portal-wlr
     lxsession
+    zafiro-icons
+    pcmanfm
+    shared-mime-info
+    nordic
   ];
 
   fonts.fontconfig.enable = true;
@@ -37,5 +41,11 @@
     "waybar/style.css".source = ./waybar.css;
     "wallpaper.png".source = ./wallpaper.png;
   };
-
+  
+  gtk = {
+    enable = true;
+    iconTheme.name = "Zafiro-icons-Dark";
+    font.name = "JetBrainsMono Nerd Font";
+    theme.name = "Nordic";
+  };
 }

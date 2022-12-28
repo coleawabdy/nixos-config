@@ -7,6 +7,7 @@
       bitwarden
       ublock-origin
       localcdn
+      xbrowsersync
       kristofferhagen-nord-theme
     ];
     profiles.default = {

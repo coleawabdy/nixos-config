@@ -77,6 +77,8 @@ let
       usbmuxd.enable = true;
       dbus.enable = true;
     };
+
+    programs.dconf.enable = true;
     
     xdg.portal.wlr.enable = true;
   };
