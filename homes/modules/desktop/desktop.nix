@@ -12,6 +12,7 @@
     networkmanagerapplet
     libnotify
     xdg-desktop-portal-wlr
+    lxsession
   ];
 
   fonts.fontconfig.enable = true;

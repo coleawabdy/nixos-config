@@ -34,6 +34,7 @@ inputs:
           steamcmd
           gnucash
           megacmd
+          libreoffice
        ];
 
         sessionVariables = {
