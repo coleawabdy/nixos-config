@@ -32,6 +32,8 @@ inputs:
           cmake
           steam-tui
           steamcmd
+          gnucash
+          megacmd
        ];
 
         sessionVariables = {

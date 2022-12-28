@@ -61,7 +61,8 @@ let
     };
 
     services.fwupd.enable = true;
-    
+    services.mullvad-vpn.enable = true;
+
     hardware.opengl.enable = true;
     hardware.pulseaudio.enable = false;
     hardware.firmware = with pkgs; [
@@ -69,8 +70,11 @@ let
     ];
 
     environment.systemPackages = with pkgs; [
+      libimobiledevice
       tzupdate
     ];
+
+    services.usbmuxd.enable = true;
   };
 in {
   system = "x86_64-linux";
