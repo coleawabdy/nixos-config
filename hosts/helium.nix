@@ -61,7 +61,6 @@ let
     };
 
     services.fwupd.enable = true;
-    services.mullvad-vpn.enable = true;
 
     hardware.opengl.enable = true;
     hardware.pulseaudio.enable = false;
@@ -74,7 +73,12 @@ let
       tzupdate
     ];
 
-    services.usbmuxd.enable = true;
+    services = {
+      usbmuxd.enable = true;
+      dbus.enable = true;
+    };
+    
+    xdg.portal.wlr.enable = true;
   };
 in {
   system = "x86_64-linux";

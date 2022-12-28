@@ -11,6 +11,7 @@
     rofi-wayland
     networkmanagerapplet
     libnotify
+    xdg-desktop-portal-wlr
   ];
 
   fonts.fontconfig.enable = true;
@@ -35,4 +36,5 @@
     "waybar/style.css".source = ./waybar.css;
     "wallpaper.png".source = ./wallpaper.png;
   };
+
 }
