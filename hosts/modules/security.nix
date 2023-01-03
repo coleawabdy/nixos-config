@@ -33,7 +33,6 @@
     "net.ipv4.tcp_sack" = 0;
     "net.ipv4.tcp_dsack" = 0;
     "net.ipv4.tcp_fsack" = 0;
-    "kernel.yama.ptrace_scope" = 2;
     "vm.mmap_rnd_bits" = 32;
     "vm.mmap_rnd_compat_bits" = 16;
     "fs.protected_symlinks" = 1;

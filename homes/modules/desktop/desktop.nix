@@ -17,6 +17,7 @@
     pcmanfm
     shared-mime-info
     nordic
+    numix-cursor-theme
   ];
 
   fonts.fontconfig.enable = true;
@@ -44,6 +45,7 @@
   
   gtk = {
     enable = true;
+    cursorTheme.name = "numix";
     iconTheme.name = "Zafiro-icons-Dark";
     font.name = "JetBrainsMono Nerd Font";
     theme.name = "Nordic";
