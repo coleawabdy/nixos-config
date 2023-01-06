@@ -63,6 +63,11 @@ let
     services.fwupd.enable = true;
 
     hardware.opengl.enable = true;
+    hardware.opengl.extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+    ];
+
     hardware.pulseaudio.enable = false;
     hardware.firmware = with pkgs; [
       sof-firmware
@@ -70,14 +75,15 @@ let
 
     environment.systemPackages = with pkgs; [
       libimobiledevice
-      tzupdate
     ];
 
     services = {
       usbmuxd.enable = true;
       dbus.enable = true;
+      localtimed.enable = true;
     };
 
+    programs.light.enable = true;
     programs.dconf.enable = true;
     
     xdg.portal.wlr.enable = true;

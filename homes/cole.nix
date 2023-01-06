@@ -25,9 +25,6 @@ inputs:
           htop
           tmux
           alsa-utils
-          (rust-bin.stable.latest.default.override {
-            extensions = [ "rust-src" ];
-          })
           gcc
           cmake
           steam-tui
@@ -35,6 +32,7 @@ inputs:
           gnucash
           megacmd
           libreoffice
+          todoist-electron
        ];
 
         sessionVariables = {

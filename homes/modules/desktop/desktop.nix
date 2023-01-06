@@ -18,6 +18,8 @@
     shared-mime-info
     nordic
     numix-cursor-theme
+    xdg-utils
+    libappindicator
   ];
 
   fonts.fontconfig.enable = true;
@@ -49,5 +51,9 @@
     iconTheme.name = "Zafiro-icons-Dark";
     font.name = "JetBrainsMono Nerd Font";
     theme.name = "Nordic";
+  };
+
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "Unity";
   };
 }
