@@ -31,10 +31,17 @@
     htop
     pciutils
     usbutils
+    swaylock
   ];
 
   services.udev = {
     enable = true;
+  };
+
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
   };
   
   i18n.defaultLocale = "en_US.UTF-8";

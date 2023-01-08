@@ -33,6 +33,7 @@ inputs:
           megacmd
           libreoffice
           todoist-electron
+          obsidian
        ];
 
         sessionVariables = {
