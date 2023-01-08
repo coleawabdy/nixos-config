@@ -80,7 +80,6 @@ let
     services = {
       usbmuxd.enable = true;
       dbus.enable = true;
-      localtimed.enable = true;
     };
 
     programs.light.enable = true;
