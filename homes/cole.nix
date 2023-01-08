@@ -34,6 +34,7 @@ inputs:
           libreoffice
           todoist-electron
           obsidian
+          signal-desktop
        ];
 
         sessionVariables = {
