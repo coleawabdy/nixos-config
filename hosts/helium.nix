@@ -87,12 +87,14 @@ let
     
     xdg.portal.wlr.enable = true;
   };
-in {
+in { inputs }: {
   system = "x86_64-linux";
   modules = [
+    inputs.hyprland.nixosModules.default
     (import ./modules/security.nix)
     (import ./modules/bluetooth.nix)
     (import ./modules/steam.nix)
+    (import ./modules/desktop.nix)
     config
   ];
 }

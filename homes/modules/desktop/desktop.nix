@@ -23,8 +23,6 @@
   ];
 
   fonts.fontconfig.enable = true;
-
-  wayland.windowManager.hyprland.enable = true;
   
   programs = {
     waybar.enable = true;

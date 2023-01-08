@@ -6,7 +6,7 @@ let
 in listToAttrs (
   map (host: 
     let 
-      hostInfo = import ../hosts/${host}.nix; 
+      hostInfo = (import ../hosts/${host}.nix) { inherit inputs; };
     in {
       name = host;
       value = nixosSystem {
