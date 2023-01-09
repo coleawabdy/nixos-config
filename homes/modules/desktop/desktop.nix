@@ -1,33 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ 
-      "JetBrainsMono"
-      "Noto"
-    ]; })
-    noto-fonts-emoji
-    liberation_ttf
-    swaybg
-    rofi-wayland
-    networkmanagerapplet
-    libnotify
-    lxsession
-    zafiro-icons
-    pcmanfm
-    shared-mime-info
-    nordic
-    numix-cursor-theme
-    xdg-utils
-    libappindicator
-  ];
-
   fonts.fontconfig.enable = true;
   
-  programs = {
-    waybar.enable = true;
-  };
-
   services = {
     dunst = {
       enable = true;
@@ -49,9 +24,5 @@
     iconTheme.name = "Zafiro-icons-Dark";
     font.name = "JetBrainsMono Nerd Font";
     theme.name = "Nordic";
-  };
-
-  home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Unity";
   };
 }

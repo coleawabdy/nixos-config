@@ -56,6 +56,8 @@ inputs:
         ];
       };
 
+      wayland.windowManager.hyprland.enable = true;
+
    };
   in [
     inputs.hyprland.homeManagerModules.default
