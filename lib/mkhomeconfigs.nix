@@ -3,7 +3,7 @@ let
   pkgs = import inputs.nixpkgs {
     system = "x86_64-linux";
     config.allowUnfree = true;
-    overlays = [ inputs.nurpkgs.overlay inputs.rust-overlay.overlays.default ];
+    overlays = [ inputs.nurpkgs.overlay  ];
   };
   homeManagerConfiguration = inputs.home-manager.lib.homeManagerConfiguration;
 in builtins.listToAttrs (
