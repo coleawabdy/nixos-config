@@ -20,6 +20,7 @@
     rofi-wayland
     networkmanagerapplet
     libappindicator
+    libimobiledevice
     waybar
   ];
 
@@ -32,6 +33,17 @@
     noto-fonts
     noto-fonts-emoji
   ];
+
+  programs = {
+    light.enable = true;
+    dconf.enable = true;
+  };
+
+  services = {
+    usbmuxd.enable = true;
+  };
+
+  xdg.portal.wlr.enable = true;
 
   security.pam.services.swaylock = {
     text = "auth include login";
