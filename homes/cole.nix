@@ -35,7 +35,6 @@ inputs:
           todoist-electron
           obsidian
           signal-desktop
-          zoom-us 
        ];
 
         sessionVariables = {

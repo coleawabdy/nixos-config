@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     lxsession
     swaylock
+    swayidle
     swaybg
     pcmanfm
     shared-mime-info
