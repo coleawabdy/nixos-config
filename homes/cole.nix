@@ -21,14 +21,6 @@ inputs:
         stateVersion = "22.11";
 
         packages = with pkgs; [
-          vim
-          htop
-          tmux
-          alsa-utils
-          gcc
-          cmake
-          steam-tui
-          steamcmd
           gnucash
           megacmd
           libreoffice
@@ -55,8 +47,6 @@ inputs:
           vscode-extensions.tamasfe.even-better-toml
         ];
       };
-
-      wayland.windowManager.hyprland.enable = true;
 
    };
   in [

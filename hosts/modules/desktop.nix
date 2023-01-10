@@ -1,4 +1,4 @@
-{ hyprland, xdg-desktop-portal-hyprland, pkgs, stdenv, lib, ... }:
+{ hyprland, pkgs, stdenv, lib, ... }:
 {
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
@@ -21,7 +21,9 @@
     networkmanagerapplet
     libappindicator
     libimobiledevice
-    waybar
+    libdrm
+    cmake
+    waybar-hyprland
   ];
 
   fonts.fonts = with pkgs; [
@@ -37,15 +39,14 @@
   programs = {
     light.enable = true;
     dconf.enable = true;
+    hyprland = {
+      enable = true;
+    };
   };
 
   services = {
     usbmuxd.enable = true;
   };
-
-  xdg.portal.extraPortals = [
-    xdg-desktop-portal-hyprland
-  ];
 
   security.pam.services.swaylock = {
     text = "auth include login";

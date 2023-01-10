@@ -1,4 +1,4 @@
-hosts: { inputs }:
+hosts: { inputs, pkgs }:
 
 with builtins;
 let
@@ -10,6 +10,7 @@ in listToAttrs (
     in {
       name = host;
       value = nixosSystem {
+        inherit pkgs;
         system = hostInfo.system;
         modules = [
           ../hosts/modules/common.nix

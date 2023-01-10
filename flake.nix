@@ -2,7 +2,7 @@
   description = "System configuration";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-22.11;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-unstable;
 
     nurpkgs.url = github:nix-community/NUR;
 
@@ -12,27 +12,34 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    xdg-desktop-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
   };
 
   outputs = { self, nixpkgs, ... } @ inputs: 
   
   with inputs;
   let
-   mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
-   mkHomeConfigs = import ./lib/mkhomeconfigs.nix;
+    mkNixOSConfigs = import ./lib/mknixosconfigs.nix;
+    mkHomeConfigs = import ./lib/mkhomeconfigs.nix;
+    pkgs = import inputs.nixpkgs {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+      overlays = [
+        inputs.nurpkgs.overlay
+        inputs.hyprland.overlays.default
+      ];
+    };
   in {
     nixosConfigurations = mkNixOSConfigs [
       "hydrogen"
       "helium"
     ] {
-      inherit inputs; 
+      inherit inputs pkgs; 
     };
     
     homeConfigurations = mkHomeConfigs [
       "cole"
     ] {
-      inherit inputs;
+      inherit inputs pkgs;
     };
  };
 }

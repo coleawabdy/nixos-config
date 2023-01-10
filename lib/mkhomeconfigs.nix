@@ -1,10 +1,5 @@
-homes: { inputs }:
+homes: { inputs, pkgs }:
 let
-  pkgs = import inputs.nixpkgs {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-    overlays = [ inputs.nurpkgs.overlay  ];
-  };
   homeManagerConfiguration = inputs.home-manager.lib.homeManagerConfiguration;
 in builtins.listToAttrs (
   map (home: 
