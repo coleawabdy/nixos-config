@@ -1,5 +1,4 @@
-{ hyprland, pkgs, ... }:
-
+{ hyprland, xdg-desktop-portal-hyprland, pkgs, stdenv, lib, ... }:
 {
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
@@ -44,7 +43,9 @@
     usbmuxd.enable = true;
   };
 
-  xdg.portal.wlr.enable = true;
+  xdg.portal.extraPortals = [
+    xdg-desktop-portal-hyprland
+  ];
 
   security.pam.services.swaylock = {
     text = "auth include login";

@@ -40,6 +40,7 @@ inputs:
         sessionVariables = {
           EDITOR = "vim";
           TERM = "alacritty";
+          WLR_NO_HARDWARE_CURSORS = 1;
         };
       };
       
