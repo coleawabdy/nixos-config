@@ -17,6 +17,7 @@
     "waybar/config".source = ./waybar.json;
     "waybar/style.css".source = ./waybar.css;
     "wallpaper.png".source = ./wallpaper.png;
+    "swaylock/config".source = ./swaylock;
   };
   
   gtk = {

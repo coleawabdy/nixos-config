@@ -35,7 +35,7 @@ inputs:
           todoist-electron
           obsidian
           signal-desktop
-          gcalcli
+          zoom-us 
        ];
 
         sessionVariables = {
