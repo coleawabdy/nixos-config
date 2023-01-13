@@ -80,6 +80,7 @@ button:hover {
 }
 
 #battery {
+  padding-right: 14px;
 }
 
 #battery.charging, #battery.plugged {
@@ -96,11 +97,6 @@ button:hover {
 #battery.critical:not(.charging) {
     background-color: #BF616A;
     color: #ECEFF4;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 label:focus {

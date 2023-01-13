@@ -21,9 +21,8 @@
     networkmanagerapplet
     libappindicator
     libimobiledevice
-    libdrm
-    cmake
     waybar-hyprland
+    greetd.tuigreet
   ];
 
   fonts.fonts = with pkgs; [
@@ -46,6 +45,14 @@
 
   services = {
     usbmuxd.enable = true;
+    greetd = {
+      enable = true;
+      settings = rec {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
+        };
+      };
+    };
   };
 
   security.pam.services.swaylock = {

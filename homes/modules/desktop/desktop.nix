@@ -22,7 +22,7 @@
   
   gtk = {
     enable = true;
-    cursorTheme.name = "numix";
+    cursorTheme.name = "Numix-Cursor";
     iconTheme.name = "Zafiro-icons-Dark";
     font.name = "JetBrainsMono Nerd Font";
     theme.name = "Nordic";
