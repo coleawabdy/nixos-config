@@ -80,9 +80,6 @@ let
     services = {
       usbmuxd.enable = true;
       dbus.enable = true;
-      logind.extraConfig = ''
-      HandleLidSwitch=lock
-      '';
     };
   };
 in { inputs }: {

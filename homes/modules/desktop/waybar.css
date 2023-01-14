@@ -220,3 +220,15 @@ label:focus {
 #scratchpad.empty {
 	background-color: transparent;
 }
+
+#workspaces button {
+  color: #eceff4;
+}
+
+#workspaces button.active {
+  background-color: #5e81ac;
+}
+
+#workspaces button.urgent {
+  background-color: #bf616a;
+}

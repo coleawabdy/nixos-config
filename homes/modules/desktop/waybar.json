@@ -27,6 +27,10 @@
             "unlocked": ""
         }
     },
+    "wlr/workspaces": {
+      "on-click": "activate",
+      "sort-by-number": true
+    },
    "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -66,14 +70,17 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%I:%M %p}"
+        "format": "{:%I:%M %p}",
+        "interval": 1
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "interval": 1
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "interval": 4
     },
     "temperature": {
         "thermal-zone": 1,
