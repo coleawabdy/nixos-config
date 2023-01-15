@@ -8,7 +8,11 @@ let
       "sd_mod"
     ];
     boot.initrd.kernelModules = [ "dm-snapshot" ];
-    
+    boot.initrd.luks.devices.nixos = {
+      device = "/dev/disk/by-label/NIXOS";
+      preLVM = true;
+    };
+
     fileSystems = {
       "/" = {
         device = "/dev/main/root";
