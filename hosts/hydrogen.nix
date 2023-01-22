@@ -9,10 +9,7 @@ let
     ];
     boot.initrd.kernelModules = [
 			"dm-snapshot"
-			"nvidia"
-			"nvidia_modeset"
-			"nvidia_uvm"
-			"nvidia_drm"
+      "amdgpu"
 		];
     boot.initrd.luks.devices.nixos = {
       device = "/dev/disk/by-label/NIXOS";
@@ -50,27 +47,16 @@ let
     };
 
 		environment.sessionVariables = {
-			LIBVA_DRIVER_NAME = "nvidia";
-			XDG_SESSION_TYPE = "wayland";
-			GBM_BACKEND = "nvidia-drm";
-			__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-			WLR_NO_HARDWARE_CURSORS = "1";
-			EGL_PLATFORM = "wayland";
-			MOZ_DISABLE_RDD_SANDBOX = "1";
 		};
 
 		environment.systemPackages = with pkgs; [
 		];
 
-		services.xserver.videoDrivers = [ "nvidia" ];
+		services.xserver.videoDrivers = [ "amdgpu" ];
 
-		programs.hyprland.nvidiaPatches = true;
-		
 		hardware.opengl.extraPackages = with pkgs; [
-			nvidia-vaapi-driver
 		];
     hardware.opengl.enable = true;
-		hardware.nvidia.modesetting.enable = true;
     hardware.pulseaudio.enable = false;
 
     services.dbus.enable = true;
